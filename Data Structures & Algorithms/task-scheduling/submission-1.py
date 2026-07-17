@@ -1,0 +1,15 @@
+class Solution:
+    def leastInterval(self, tasks: List[str], n: int) -> int:
+        count = [0] * 26
+        for task in tasks:
+            count[ord(task) - ord("A")] +=1
+        maxf = max(count)
+        maxcount = 0
+        for i in count:
+            if i is maxf:
+                maxcount +=1
+            else:
+                pass
+        return max((maxf - 1) * (n + 1) + maxcount, len(tasks))
+
+        
